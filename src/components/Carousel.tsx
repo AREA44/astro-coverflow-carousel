@@ -10,15 +10,15 @@ const IMAGES_DATA = [
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1417325384643-aac51acc9e5d',
+    src: 'https://images.unsplash.com/photo-1713782894016-01154435f4f4',
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1417325384643-aac51acc9e5d',
+    src: 'https://images.unsplash.com/photo-1713782522146-3ac703ab3bce',
   },
   {
     id: 4,
-    src: 'https://images.unsplash.com/photo-1417325384643-aac51acc9e5d',
+    src: 'https://images.unsplash.com/photo-1713783540689-0ec1a2c272d9',
   },
 ]
 
@@ -89,12 +89,12 @@ export default function Carousel() {
           position === 0
             ? 'active'
             : position === -1 || position === 1
-              ? 'level1'
-              : position === -2 || position === 2
-                ? 'level2'
-                : position === -3 || position === 3
-                  ? 'level3'
-                  : 'level4'
+            ? 'level1'
+            : position === -2 || position === 2
+            ? 'level2'
+            : position === -3 || position === 3
+            ? 'level3'
+            : 'level4'
 
         return (
           <motion.div
