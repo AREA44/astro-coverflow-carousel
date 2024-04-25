@@ -89,12 +89,12 @@ export default function Carousel() {
           position === 0
             ? 'active'
             : position === -1 || position === 1
-            ? 'level1'
-            : position === -2 || position === 2
-            ? 'level2'
-            : position === -3 || position === 3
-            ? 'level3'
-            : 'level4'
+              ? 'level1'
+              : position === -2 || position === 2
+                ? 'level2'
+                : position === -3 || position === 3
+                  ? 'level3'
+                  : 'level4'
 
         return (
           <motion.div
