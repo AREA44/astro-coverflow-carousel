@@ -116,7 +116,7 @@ export default function Carousel() {
       })}
       <button
         onClick={() => handleMove(-1)}
-        className="absolute -left-6 grid h-14 w-14 place-content-center  text-3xl transition-colors hover:text-sky-500"
+        className="absolute -left-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Carousel() {
       </button>
       <button
         onClick={() => handleMove(1)}
-        className="absolute -right-6 grid h-14 w-14 place-content-center  text-3xl transition-colors hover:text-sky-500"
+        className="absolute -right-6 grid h-14 w-14 place-content-center text-3xl transition-colors hover:text-sky-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
