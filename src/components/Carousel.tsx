@@ -1,24 +1,24 @@
 // https://gist.github.com/mackenziechild/035fc7c96d648b4eada1f5d9ba4eb2dc#file-carousel-js
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const IMAGES_DATA = [
   {
     id: 1,
-    src: 'https://images.unsplash.com/photo-1417325384643-aac51acc9e5d',
+    src: "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d",
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1713782894016-01154435f4f4',
+    src: "https://images.unsplash.com/photo-1713782894016-01154435f4f4",
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1713782522146-3ac703ab3bce',
+    src: "https://images.unsplash.com/photo-1713782522146-3ac703ab3bce",
   },
   {
     id: 4,
-    src: 'https://images.unsplash.com/photo-1713783540689-0ec1a2c272d9',
+    src: "https://images.unsplash.com/photo-1713783540689-0ec1a2c272d9",
   },
 ];
 
@@ -38,31 +38,31 @@ export default function Carousel() {
       imgArrCopy.unshift({ ...lastItem, id: Math.random() });
       setImages(imgArrCopy);
     }
-    console.log('images', images);
+    console.log("images", images);
   };
 
   const variants = {
     active: {
-      x: 'calc(-50% + 0px)',
-      width: '22rem',
+      x: "calc(-50% + 0px)",
+      width: "22rem",
       scale: 1.1,
       opacity: 1,
     },
     level1: (position: number) => ({
       x: `calc(-50% + ${position * 240}px)`,
-      width: '3rem',
+      width: "3rem",
       scale: 0.9,
       opacity: 1,
     }),
     level2: (position: number) => ({
       x: `calc(-50% + ${position * 145}px)`,
-      width: '2rem',
+      width: "2rem",
       scale: 0.75,
       opacity: 1,
     }),
     level3: (position: number) => ({
       x: `calc(-50% + ${position * 108}px)`,
-      width: '1.5rem',
+      width: "1.5rem",
       scale: 0.5,
       opacity: 1,
     }),
@@ -87,14 +87,14 @@ export default function Carousel() {
 
         let imgLevel =
           position === 0
-            ? 'active'
+            ? "active"
             : position === -1 || position === 1
-              ? 'level1'
+              ? "level1"
               : position === -2 || position === 2
-                ? 'level2'
+                ? "level2"
                 : position === -3 || position === 3
-                  ? 'level3'
-                  : 'level4';
+                  ? "level3"
+                  : "level4";
 
         return (
           <motion.div
