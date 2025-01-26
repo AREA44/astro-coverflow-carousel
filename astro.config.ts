@@ -10,9 +10,9 @@ export default defineConfig({
   integrations: [
     react(),
   ],
-  vite: [
+  vite: {
     plugins: [
       tailwindcss(),
     ],
-  ],
+  },
 })
