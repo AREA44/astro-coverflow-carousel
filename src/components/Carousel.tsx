@@ -1,7 +1,7 @@
 // https://gist.github.com/mackenziechild/035fc7c96d648b4eada1f5d9ba4eb2dc#file-carousel-js
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const IMAGES_DATA = [
   {
@@ -20,26 +20,26 @@ const IMAGES_DATA = [
     id: 4,
     src: 'https://images.unsplash.com/photo-1713783540689-0ec1a2c272d9',
   },
-]
+];
 
 export default function Carousel() {
-  const [images, setImages] = useState(IMAGES_DATA)
+  const [images, setImages] = useState(IMAGES_DATA);
 
   const handleMove = (direction: number) => {
-    const imgArrCopy = [...images]
+    const imgArrCopy = [...images];
 
     if (direction > 0) {
-      const firstItem = imgArrCopy.shift()
-      if (!firstItem) return
-      imgArrCopy.push({ ...firstItem, id: Math.random() })
-      setImages(imgArrCopy)
+      const firstItem = imgArrCopy.shift();
+      if (!firstItem) return;
+      imgArrCopy.push({ ...firstItem, id: Math.random() });
+      setImages(imgArrCopy);
     } else {
-      const lastItem = imgArrCopy.pop()
-      imgArrCopy.unshift({ ...lastItem, id: Math.random() })
-      setImages(imgArrCopy)
+      const lastItem = imgArrCopy.pop();
+      imgArrCopy.unshift({ ...lastItem, id: Math.random() });
+      setImages(imgArrCopy);
     }
-    console.log('images', images)
-  }
+    console.log('images', images);
+  };
 
   const variants = {
     active: {
@@ -72,17 +72,17 @@ export default function Carousel() {
       scale: 0.25,
       opacity: 0,
     }),
-  }
+  };
 
   return (
     <div className="relative mx-auto flex h-96 w-[90%] items-center justify-center">
       {images.map((image, i) => {
-        let position = 0
+        let position = 0;
 
         if (images.length % 2) {
-          position = i - (images.length + 1) / 2
+          position = i - (images.length + 1) / 2;
         } else {
-          position = i - images.length / 2
+          position = i - images.length / 2;
         }
 
         let imgLevel =
@@ -94,7 +94,7 @@ export default function Carousel() {
                 ? 'level2'
                 : position === -3 || position === 3
                   ? 'level3'
-                  : 'level4'
+                  : 'level4';
 
         return (
           <motion.div
@@ -112,7 +112,7 @@ export default function Carousel() {
               alt={`Carousel image ${i + 1}`}
             />
           </motion.div>
-        )
+        );
       })}
       <button
         onClick={() => handleMove(-1)}
@@ -153,5 +153,5 @@ export default function Carousel() {
         </svg>
       </button>
     </div>
-  )
+  );
 }
